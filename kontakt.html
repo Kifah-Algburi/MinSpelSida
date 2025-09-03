@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mina Favoritspel - Kontakt</title>
+    <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+    <header>
+        <h1>Mina Favoritspel</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Startsida</a></li>
+                <li><a href="spel.html">Spel</a></li>
+                <li><a href="om.html">Om Mig</a></li>
+                <li><a href="kontakt.html" class="aktiv">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Kontakta Mig</h2>
+        
+        <section class="kontakt-form">
+            <h3>Registrera dig för nyhetsbrev</h3>
+            <form id="registreringsform">
+                <div class="form-grupp">
+                    <label for="namn">Namn:</label>
+                    <input type="text" id="namn" name="namn" required>
+                </div>
+                
+                <div class="form-grupp">
+                    <label for="epost">E-post:</label>
+                    <input type="email" id="epost" name="epost" required>
+                </div>
+                
+                <div class="form-grupp">
+                    <label for="losenord">Lösenord:</label>
+                    <input type="password" id="losenord" name="losenord" required>
+                </div>
+                
+                <div class="form-grupp">
+                    <label for="spelpreferens">Favoritspelgenre:</label>
+                    <select id="spelpreferens" name="spelpreferens">
+                        <option value="action">Action</option>
+                        <option value="rpg">RPG</option>
+                        <option value="sport">Sport</option>
+                        <option value="strategi">Strategi</option>
+                        <option value="annat">Annat</option>
+                    </select>
+                </div>
+                
+                <div class="form-grupp">
+                    <label for="meddelande">Dina spelintressen:</label>
+                    <textarea id="meddelande" name="meddelande" rows="4"></textarea>
+                </div>
+                
+                <div class="form-grupp">
+                    <label for="nyhetsbrev">
+                        <input type="checkbox" id="nyhetsbrev" name="nyhetsbrev">
+                        Jag vill ha nyhetsbrev
+                    </label>
+                </div>
+                
+                <button type="submit" id="skicka-knapp">Registrera</button>
+            </form>
+            
+            <div id="tack-meddelande" class="dold">
+                <h3>Tack för din registrering!</h3>
+                <p>Du har nu registrerats för vårt nyhetsbrev.</p>
+            </div>
+        </section>
+        
+        <section class="karta">
+            <h3>Besök vårt spelevent</h3>
+            <div class="karta-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2032.2411287634292!2d18.049416316258355!3d59.34538138166746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d86c5e3dfd5%3A0x6ff1a920c757aefb!2sArenastaden%2C%20Johanneshov!5e0!3m2!1sen!2sse!4v1661267130518!5m2!1sen!2sse" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mina Favoritspel. Alla rättigheter förbehållna.</p>
+    </footer>
+
+    <script>
+        document.getElementById('registreringsform').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('registreringsform').classList.add('dold');
+            document.getElementById('tack-meddelande').classList.remove('dold');
+        });
+    </script>
+</body>
+</html>
